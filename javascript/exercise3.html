@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+	var input = "abcd";
+	var output = "";
+	var permutations = Math.pow(input.length, 2);
+	var iterations = permutations%2 == 0 ? permutations : permutations - 1;
+
+	for(i = 0; i < iterations; i++) {
+		var str = i.toString(2);
+
+		//I've chosen to pad with leading zeros for simplicity.
+		for(j = str.length; j < input.length; j++) {
+			str = "0" + str;
+		} 
+		
+		var nextCombo = "";
+		for(j = str.length - 1; j > -1; j--) {
+			var nextBit = str[j];
+			if(parseInt(nextBit) == 1) {
+				var nextCharacter = input[j];
+				nextCombo = nextCharacter + nextCombo;
+			}
+		}
+		output = output + nextCombo + "<br />\n";
+	}
+
+	document.getElementById("demo").innerHTML = output;
+
+</script>
+
+</body>
+</html>

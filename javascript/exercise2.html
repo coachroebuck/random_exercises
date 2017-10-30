@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+
+	var input = [1, 6, 3, 2, 5, 5, 7, 8, 4, 8, 2, 5, 9, 9, 1];
+	var output = "";
+	var size = input.length;
+
+	//I need to pass through the array twice.
+	//The first pass will group the list into buckets
+	var bucket = {};
+	for(i = 0; i < size - 1; i++) {
+		var a = input[i];
+		if(bucket[a] == undefined) {
+			bucket[a] = new Array();
+		}
+		bucket[a].push(a);
+	}
+
+	//We must deal with the number # 5 before we continue
+	//or we will end up with the wrong output 
+	//because an extra copy has been added to the list.
+	if(bucket[5] != undefined) {
+		bucket[5].splice(-1,1)
+	}
+	
+	//Since the requirements state to display the output of the x-element of (x, y) in the order in which the numbers appear,
+	//we require to pass through the list a second time.
+	for(i = 0; i < size - 1; i++) {
+		var a = input[i];
+		var b = 10 - a;
+		if(bucket[b] != undefined) {
+			var list = bucket[b];
+			for(j = 0; j < list.length; j++) {
+				var c = list[j];
+				output = output + "(" + a + "," + c + ")<br />\n";
+			}
+		}
+	}
+
+	document.getElementById("demo").innerHTML = output;
+
+</script>
+
+</body>
+</html>
