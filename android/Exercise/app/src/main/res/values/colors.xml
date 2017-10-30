@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="ViewHolderBackground2">#FFC7EBF5</color>
+    <color name="ViewHolderBackground1">#FFD1F5FF</color>
+    <color name="ViewHolderForegroundColor">#FF595856</color>
+    <color name="ForecastForegroundColor">#FFE5E4E2</color>
+    <color name="ViewHolderHighlightBackgroundColor">#FFFDD017</color>
+    <color name="ForecastViewholderBackgroundColor1">#FF527897</color>
+    <color name="ForecastViewholderBackgroundColor2">#FF5C82A1</color>
+</resources>

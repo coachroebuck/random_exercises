@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Cricut Weather</string>
+    <string name="action_settings">@string/title_add_city</string>
+
+    <string name="message_delete_city_confirmation">This action cannot be undone. Are you sure you want to do this?</string>
+
+    <string name="title_add_city">New City</string>
+    <string name="title_add">Add</string>
+    <string name="title_cancel">Cancel</string>
+    <string name="title_delete">Delete</string>
+    <string name="title_weather_list">Cities</string>
+    <string name="title_zip">Enter Zip Code</string>
+
+    <string name="message_api_error">Oops! An error occurred while retrieving the information. Please review your information and try again.</string>
+    <string name="message_add_city">Please enter a new city by its zip code.</string>
+    <string name="title_ok">OK</string>
+    <string name="no_cities_text">No cities listed. Please add some cities by zip code.</string>
+</resources>

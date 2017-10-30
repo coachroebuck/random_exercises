@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/forecast_background">
+
+    <RelativeLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:clickable="false"
+        android:focusableInTouchMode="false"
+        android:focusable="false"
+        >
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_height="128dip"
+            android:layout_width="128dip"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dip"
+            android:src="@mipmap/sunny" />
+
+        <TextView
+            android:id="@+id/cityNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="South Jordan, UT"
+            android:textSize="24sp"
+            android:textColor="@color/ForecastForegroundColor"
+            android:layout_marginLeft="8dip"
+            android:layout_marginTop="8dip"
+            />
+
+        <TextView
+            android:id="@+id/temperatureTextView"
+            android:layout_below="@id/cityNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="32"
+            android:layout_marginRight="8dip"
+            android:layout_marginLeft="8dip"
+            android:textSize="64sp"
+            android:textColor="@color/ForecastForegroundColor" />
+
+        <TextView
+            android:id="@+id/temperatureScaleTextView"
+            android:layout_below="@id/cityNameTextView"
+            android:layout_toRightOf="@id/temperatureTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="°F"
+            android:layout_marginTop="8dip"
+            android:layout_marginRight="8dip"
+            android:layout_marginLeft="8dip"
+            android:textSize="18sp"
+            android:textColor="@color/ForecastForegroundColor" />
+
+        <TextView
+            android:id="@+id/windChillTextView"
+            android:layout_below="@id/temperatureTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wind Chill: 27°"
+            android:layout_marginRight="8dip"
+            android:layout_marginLeft="8dip"
+            android:textSize="18sp"
+            android:textColor="@color/ForecastForegroundColor" />
+
+        <TextView
+            android:id="@+id/humidityTextView"
+            android:layout_below="@id/windChillTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Humidity: 10%"
+            android:layout_marginRight="8dip"
+            android:layout_marginLeft="8dip"
+            android:textSize="18sp"
+            android:textColor="@color/ForecastForegroundColor" />
+
+        <ImageView
+            android:id="@+id/sunRiseImageView"
+            android:layout_below="@id/humidityTextView"
+            android:layout_height="32dip"
+            android:layout_width="32dip"
+            android:src="@mipmap/sunrise" />
+
+        <ImageView
+            android:id="@+id/sunSetImageView"
+            android:layout_below="@id/sunRiseImageView"
+            android:layout_height="18dip"
+            android:layout_width="18dip"
+            android:layout_marginLeft="3dip"
+            android:src="@mipmap/moon" />
+
+        <TextView
+            android:id="@+id/sunRiseSunSetTextView"
+            android:layout_below="@id/humidityTextView"
+            android:layout_toRightOf="@id/sunRiseImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sunrise: 7:30 am\nSunset: 5:30 pm"
+            android:layout_marginRight="8dip"
+            android:layout_marginLeft="8dip"
+            android:textSize="18sp"
+            android:textColor="@color/ForecastForegroundColor" />
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/forecastRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="horizontal"
+        android:orientation="horizontal"
+        android:adjustViewBounds="true"
+        android:clickable="true"
+        android:focusableInTouchMode="false"
+        android:focusable="false"
+        android:descendantFocusability="afterDescendants">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>
