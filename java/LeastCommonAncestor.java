@@ -46,12 +46,30 @@ public class LeastCommonAncestor {
 		}
 	}
 
+	public int lca(Node node, int n1, int n2) 
+    {
+        if (node == null)
+            return -1;
+  
+        // If both n1 and n2 are smaller than root, then LCA lies in left
+        if (node.value > n1 && node.value > n2)
+            return lca(node.left, n1, n2);
+  
+        // If both n1 and n2 are greater than root, then LCA lies in right
+        if (node.value < n1 && node.value < n2) 
+            return lca(node.right, n1, n2);
+  
+        return node.value;
+    }
+
     public static void main(String[] args) {
-        final int[] input = args.length == 1 ? getNumericArray(args[0]) :
-		 	new int[]{1, 0, 2, 0, 0, 3, 4};
+        final int[] input = /*args.length >= 1 ? getNumericArray(args[0]) :*/
+		 	new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24};
 		LeastCommonAncestor instance = new LeastCommonAncestor(); 
 		List<Node> nodes = new ArrayList<Node>();
 		Node currentNode = null;
+		final int n1 = args.length >= 1 ? Integer.parseInt(args[0]) : 8;
+		final int n2 = args.length >= 2 ? Integer.parseInt(args[1]) : 16;
     	// instance.add(input);
     	// System.out.println(instance.lca(input));
 
@@ -77,6 +95,7 @@ public class LeastCommonAncestor {
     	
     	System.out.println(instance.total());
     	System.out.println(instance.isComplete());
+    	System.out.println(instance.lca(instance.root, n1, n2));
     }
 
 	private static int[] getNumericArray(final String str) {
