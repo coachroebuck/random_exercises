@@ -26,11 +26,7 @@ public class Exercise9 {
 		}
 	}
 
-    public static void main(String[] args) {
-        final int[] input = args.length == 1 ? getNumericArray(args[0]) :
-		 	new int[]{1, 0, 2, 0, 0, 3, 4};
-		Exercise9 instance = new Exercise9(); 
-    	instance.find(input, 0, input.length);
+	public void print(final int[] input) {
     	
     	StringBuilder sb = new StringBuilder();
 
@@ -40,6 +36,15 @@ public class Exercise9 {
     	}
     	
     	System.out.println(sb.toString());
+	}
+
+    public static void main(String[] args) {
+        final int[] input = args.length == 1 ? getNumericArray(args[0]) :
+		 	new int[]{1, 0, 2, 0, 0, 3, 4};
+		Exercise9 instance = new Exercise9(); 
+    	instance.print(input);
+    	instance.find(input, 0, input.length);
+    	instance.print(input);
     }
 
 	private static int[] getNumericArray(final String str) {

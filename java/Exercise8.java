@@ -34,10 +34,23 @@ public class Exercise8 {
 		return this.total;
 	}
 
+	public void print(final int[] input) {
+    	
+    	StringBuilder sb = new StringBuilder();
+
+    	for(int i = 0; i < input.length; i++) {
+    		sb.append(input[i]);
+    		sb.append(" ");
+    	}
+    	
+    	System.out.println(sb.toString());
+	}
+
     public static void main(String[] args) {
         final int[] input = args.length == 1 ? getNumericArray(args[0]) :
-		 	new int[]{1, -3, 2, 1, -1}; //{-2, 11, -4, 13, -5, -2};
+		 	new int[]{1, -3, 2, 1, -1}; //{-2,11,-4,13,-5,-2};
 		Exercise8 instance = new Exercise8(); 
+    	instance.print(input);
     	int total = instance.find(input, 0, input.length);
     	
     	StringBuilder sb = new StringBuilder();
