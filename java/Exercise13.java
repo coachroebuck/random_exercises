@@ -9,37 +9,24 @@ import java.util.Locale;
 public class Exercise13 {
 
     public static void main(String[] args) {
-    	final int min = args.length >= 1 ? Integer.parseInt(args[0]) : 1;
-    	final int max = args.length >= 2 ? Integer.parseInt(args[1]) : 2;
-
-		System.out.println("Org\tStock Price");
-    	recursive("", min, max);
+    	final int max = args.length >= 1 ? Integer.parseInt(args[0]) : 1;
+    	System.out.println("Org\tStock Price");
+    	recursive("", max);
 	}
 
-	public static void recursive(final String currentString, final int min, final int max) {
+	public static void recursive(final String currentString, final int max) {
 		for(char c = 'a'; c <= 'z'; c++) {
 			final String nextString = currentString + c;
-			if(nextString.length() >= min) {
-	    		httpRequest("http://www.nasdaq.com/symbol/", nextString);
+    		httpRequest("http://www.nasdaq.com/symbol/", nextString);
+			if(nextString.length() < max) {
+				recursive(nextString, max);
 			}
 		}
 		for(char c = '0'; c <= '9'; c++) {
 			final String nextString = currentString + c;
-			if(nextString.length() >= min) {
-	    		httpRequest("http://www.nasdaq.com/symbol/", nextString);
-			}
-		}
-
-		for(char c = 'a'; c <= 'z'; c++) {
-			final String nextString = currentString + c;
+    		httpRequest("http://www.nasdaq.com/symbol/", nextString);
 			if(nextString.length() < max) {
-				recursive(nextString, min + 1, max);
-			}
-		}
-		for(char c = '0'; c <= '9'; c++) {
-			final String nextString = currentString + c;
-			if(nextString.length() < max) {
-				recursive(nextString, min + 1, max);
+				recursive(nextString, max);
 			}
 		}
 	}
