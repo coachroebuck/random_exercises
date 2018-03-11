@@ -27,6 +27,7 @@ public class EnglishPhonemic {
         loadAffricateConsonantsSounds();
         loadNasalConsonantsSounds();
         loadApproximantsConsonantsSounds();
+        loadOtherConsonantsSounds();
     }
 
     private void loadShortVowels() {
@@ -43,7 +44,7 @@ public class EnglishPhonemic {
     private void loadLongVowels() {
         vowels.put("i", new Tuple("ee", "sheep, need, beat, read"));
         vowels.put("u", new Tuple("oo", "shoot, few, lose, fruit, chew"));
-        vowels.put("ɜ:", new Tuple("er", "nurse, heard, third, turn, her"));
+        vowels.put("ɜ", new Tuple("er", "nurse, heard, third, turn, her"));
         vowels.put("ɔ", new Tuple("oo", "door" ,"tour"));
         vowels.put("ɒ", new Tuple("o", "on"));
     }
@@ -61,23 +62,24 @@ public class EnglishPhonemic {
     }
 
     private void loadFricativeConsonantsSounds() {
-        consonants.put("f", new Tuple("f", "free", "feel", "Friday", "knife"));
+        consonants.put("f", new Tuple("f", "free", "feel", "Friday", "knife", "phone"));
         consonants.put("v", new Tuple("v", "video", "vest", "cave", "give"));
         consonants.put("θ", new Tuple("th", "thought", "think", "bath"));
         consonants.put("ð", new Tuple("th", "this", "there", "those", "brother", "other"));
-        consonants.put("z", new Tuple("z", "zoo", "crazy", "lazy", "zigzag", "nose"));
+        consonants.put("z", new Tuple("z", "zoo", "crazy", "lazy", "zigzag", "nose", "Louisiana"));
         consonants.put("ʃ", new Tuple("sh", "shirt", "rush", "shop", "cash"));
         consonants.put("ʒ", new Tuple("s", "television", "delusion", "casual"));
         consonants.put("h", new Tuple("h", "high", "help", "hello"));
     }
 
     private void loadPlosiveConsonantsSounds() {
+        consonants.put("s", new Tuple("s", "see", "sleep", "kiss", "seat", "Cedric"));
         consonants.put("p", new Tuple("p", "pea", "pin", "cap", "purpose", "pause"));
         consonants.put("b", new Tuple("b", "boat", "bag", "bubble", "build", "robe"));
         consonants.put("t", new Tuple("t", "tea", "time", "train", "tow", "late", "get"));
         consonants.put("d", new Tuple("d", "dog", "door", "day", "drive", "down", "feed"));
         consonants.put("k", new Tuple("k", "kite", "cash", "back", "quick", "cricket", "sock"));
-        consonants.put("g", new Tuple("g", "go", "girl", "green", "grass", "flag"));
+        consonants.put("g", new Tuple("g", "go", "girl", "green", "grass", "flag", "exit"));
     }
 
     private void loadAffricateConsonantsSounds() {
@@ -96,6 +98,11 @@ public class EnglishPhonemic {
         consonants.put("l", new Tuple("l", "love", "law", "lots", "leap", "long", "pill", "cold", "chill", "melt"));
         consonants.put("r", new Tuple("r", "run", "road", "roses", "river", "ring", "ride", "try"));
         consonants.put("j", new Tuple("y", "you", "yellow", "usual", "tune", "yesterday", "yard"));
+    }
+
+    private void loadOtherConsonantsSounds() {
+        consonants.put("gz", new Tuple("x", "exact", "exam", "exit"));
+        consonants.put("ks", new Tuple("x", "extreme", "expect", "next"));
     }
 
 	public String execute(final String input) {
